@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "eslint": "eslint . --ext .ts,.tsx,.vue,.js,.jsx --fix",
     "prepare": "husky"
   },
   "lint-staged": {
