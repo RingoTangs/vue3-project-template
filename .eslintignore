@@ -25,3 +25,4 @@ dist-ssr
 
 *.tsbuildinfo
 .eslintrc-auto-import.json
+stats.html

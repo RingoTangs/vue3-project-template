@@ -6,6 +6,7 @@ import autoImport from 'unplugin-auto-import/vite'
 import unoCSS from 'unocss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import viteInspect from 'vite-plugin-inspect'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,5 +26,8 @@ export default defineConfig({
   ],
   build: {
     cssTarget: 'chrome49',
+    rollupOptions: {
+      plugins: [visualizer()],
+    },
   },
 })
