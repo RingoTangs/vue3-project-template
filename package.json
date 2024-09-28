@@ -13,9 +13,11 @@
     "*.{ts,tsx,js,jsx,vue}": "eslint --fix"
   },
   "dependencies": {
+    "lodash-es": "^4.17.21",
     "vue": "^3.4.37"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vitejs/plugin-legacy": "^5.4.2",
