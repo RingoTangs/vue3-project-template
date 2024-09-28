@@ -2,7 +2,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import viteLegacy from '@vitejs/plugin-legacy'
-import autoImport from 'unplugin-auto-import/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import unoCSS from 'unocss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import viteInspect from 'vite-plugin-inspect'
@@ -15,11 +17,20 @@ export default defineConfig({
     vue(),
     vueJsx(),
     viteLegacy(),
-    autoImport({
+    AutoImport({
       imports: ['vue', 'vue-router'],
       dts: './types/auto-imports.d.ts',
       dirs: ['./src/**'],
       eslintrc: { enabled: true },
+    }),
+    Components({
+      dirs: [],
+      dts: './types/components.d.ts',
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: false, // css in js
+        }),
+      ],
     }),
     unoCSS(),
     vueDevTools(),
