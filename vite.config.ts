@@ -7,6 +7,7 @@ import unoCSS from 'unocss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import viteInspect from 'vite-plugin-inspect'
 import { visualizer } from 'rollup-plugin-visualizer'
+import path from 'node:path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,7 +16,7 @@ export default defineConfig({
     vueJsx(),
     viteLegacy(),
     autoImport({
-      imports: ['vue'],
+      imports: ['vue', 'vue-router'],
       dts: './types/auto-imports.d.ts',
       dirs: ['./src/**'],
       eslintrc: { enabled: true },
@@ -24,6 +25,11 @@ export default defineConfig({
     vueDevTools(),
     viteInspect(),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   build: {
     cssTarget: 'chrome49',
     rollupOptions: {

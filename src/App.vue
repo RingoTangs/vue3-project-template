@@ -1,11 +1,5 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <section class="w-full h-full flex justify-center items-center">
-    <HelloWorld />
-  </section>
+  <RouterView></RouterView>
 </template>
 
 <style>
