@@ -2,7 +2,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import viteLegacy from '@vitejs/plugin-legacy'
-import autoImport from 'unplugin-auto-import/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import unoCSS from 'unocss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import viteInspect from 'vite-plugin-inspect'
@@ -15,11 +17,17 @@ export default defineConfig({
     vue(),
     vueJsx(),
     viteLegacy(),
-    autoImport({
+    AutoImport({
       imports: ['vue', 'vue-router'],
       dts: './types/auto-imports.d.ts',
       dirs: ['./src/**'],
       eslintrc: { enabled: true },
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      dirs: [],
+      dts: './types/components.d.ts',
+      resolvers: [ElementPlusResolver()],
     }),
     unoCSS(),
     vueDevTools(),
@@ -31,7 +39,7 @@ export default defineConfig({
     },
   },
   build: {
-    cssTarget: 'chrome49',
+    cssTarget: 'chrome85',
     rollupOptions: {
       plugins: [visualizer()],
     },
