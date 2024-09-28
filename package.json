@@ -18,7 +18,9 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
+    "@vitejs/plugin-legacy": "^5.4.2",
     "@vitejs/plugin-vue": "^5.1.2",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -26,6 +28,8 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
+    "sass": "^1.79.3",
+    "terser": "^5.34.1",
     "typescript": "~5.5.3",
     "vite": "^5.4.1",
     "vue-tsc": "^2.0.29"
