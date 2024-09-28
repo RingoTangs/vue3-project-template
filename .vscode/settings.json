@@ -1,0 +1,8 @@
+{
+  // 配置 ESlint 保存时 自动 fix.
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}
